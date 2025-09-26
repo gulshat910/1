@@ -1,5 +1,18 @@
-import  random
-numbers = [random.randint(-10,10) for _ in  range(15)]
+import random
+
+numbers = []
+for i in range(15):
+    numbers.append(random.randint(-10, 10))
+
+positives = []
+for n in numbers:
+    if n > 0:
+        positives.append(n)
+
+squares = []
+for n in numbers:
+    squares.append(n * n)
+
 print("Исходный список:", numbers)
-positive_numbers = [num for num in numbers if num > 0]
-print("Положительные числа:", positive_numbers)
+print("Положительные числа:", positives)
+print("Квадраты чисел:", squares)
