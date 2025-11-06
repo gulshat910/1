@@ -12,7 +12,7 @@ class Student:
         return self.average_grade() >= 4.5
 
 
-# --- Создаём файл со студентами ---
+#Создаём файл со студентами
 with open("students.txt", "w", encoding="utf-8") as f:
     f.write("Иванов;101;5,4,5\n")
     f.write("Петров;101;3,4,4\n")
@@ -20,7 +20,7 @@ with open("students.txt", "w", encoding="utf-8") as f:
     f.write("Анна;102;4,5,5\n")
     f.write("Ольга;101;2,3,3\n")
 
-# --- Читаем файл и создаём список объектов ---
+#Читаем файл и создаём список объектов
 students = []
 with open("students.txt", "r", encoding="utf-8") as f:
     for line in f:
@@ -28,13 +28,13 @@ with open("students.txt", "r", encoding="utf-8") as f:
         grades = list(map(int, grades_str.split(",")))
         students.append(Student(name, group, grades))
 
-# --- Записываем отличников ---
+#Записываем отличников
 with open("excellent_students.txt", "w", encoding="utf-8") as f:
     for s in students:
         if s.is_excellent():
             f.write(f"{s.name} ({s.group})\n")
 
-# --- Средний балл по группам ---
+#Средний балл по группам
 groups = {}
 for s in students:
     if s.group not in groups:
